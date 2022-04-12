@@ -30,8 +30,8 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3"
                     HorizontalAlignment="Center">
-            <Button Content="Yes" Width="100" Margin="10 20"/>
-            <Button Content="No" Width="100" Margin="10 20"/>
+            <Button Content="Yes" Width="100" Margin="10 20" Click="Button_Click"/>
+            <Button Content="No" Width="100" Margin="10 20" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Window>

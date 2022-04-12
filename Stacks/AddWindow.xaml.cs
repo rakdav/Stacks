@@ -19,9 +19,25 @@ namespace Stacks
     /// </summary>
     public partial class AddWindow : Window
     {
+        public Monitor MonitorMy { get; set; }
         public AddWindow()
         {
             InitializeComponent();
+            MonitorMy = new Monitor();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            MonitorMy.Name = NameMonitor.Text;
+            MonitorMy.Diagonal = double.Parse(DiagMonitor.Text);
+            MonitorMy.Price = decimal.Parse(PriceMonitor.Text);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            DialogResult=false;
+        }
+        
     }
 }

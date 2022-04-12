@@ -20,9 +20,24 @@ namespace Stacks
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Stack<Monitor> _monitors;
         public MainWindow()
         {
             InitializeComponent();
+            _monitors = new Stack<Monitor>();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow addWindow = new AddWindow();  
+            if(addWindow.ShowDialog()==true)
+            {
+                Monitor monitor = addWindow.MonitorMy;
+                _monitors.Push(monitor);
+                Monitors.ItemsSource = null;
+                Monitors.ItemsSource = _monitors;
+                
+            }
         }
     }
 }

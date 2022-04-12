@@ -14,7 +14,7 @@
         <DataGrid Grid.Row="0" x:Name="Monitors" AutoGenerateColumns="True"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center"
                     Orientation="Horizontal">
-            <Button Content="Add" Margin="10" Width="100"/>
+            <Button Content="Add" Margin="10" Width="100" Click="Button_Click"/>
             <Button Content="Delete" Margin="10" Width="100"/>
         </StackPanel>
     </Grid>
