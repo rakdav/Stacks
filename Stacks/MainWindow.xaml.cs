@@ -39,5 +39,23 @@ namespace Stacks
                 
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            _monitors.Pop();
+            Monitors.ItemsSource = null;
+            Monitors.ItemsSource = _monitors;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            int count = 0;
+            foreach(Monitor i in _monitors)
+            {
+                if(i.Diagonal>20)
+                    count++;
+            }
+            MessageBox.Show(count.ToString());
+        }
     }
 }

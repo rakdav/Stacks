@@ -29,9 +29,16 @@ namespace Stacks
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-            MonitorMy.Name = NameMonitor.Text;
-            MonitorMy.Diagonal = double.Parse(DiagMonitor.Text);
-            MonitorMy.Price = decimal.Parse(PriceMonitor.Text);
+            try
+            {
+                MonitorMy.Name = NameMonitor.Text;
+                MonitorMy.Diagonal = double.Parse(DiagMonitor.Text);
+                MonitorMy.Price = decimal.Parse(PriceMonitor.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

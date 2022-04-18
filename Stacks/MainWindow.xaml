@@ -5,17 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stacks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500">
+        Title="MainWindow" Height="450" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" x:Name="Monitors" AutoGenerateColumns="True"/>
+        <DataGrid Grid.Row="0" x:Name="Monitors" FontSize="20" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Модель" Binding="{Binding Path=Name}" Width="150"/>
+                <DataGridTextColumn Header="Диагональ" Binding="{Binding Path=Diagonal}" Width="150"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center"
                     Orientation="Horizontal">
             <Button Content="Add" Margin="10" Width="100" Click="Button_Click"/>
-            <Button Content="Delete" Margin="10" Width="100"/>
+            <Button Content="Delete" Margin="10" Width="100" Click="Button_Click_1"/>
+            <Button Content=">20" Margin="10" Width="100" Click="Button_Click_2"/>
         </StackPanel>
     </Grid>
 </Window>
